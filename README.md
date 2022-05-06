@@ -19,18 +19,6 @@ yarn serve
 # lint
 yarn lint
 ```
-
-## 分支说明
-
-```bash
-# 修改分支名
-git branch -M branch-name
-# tag
-git tag 20210508-v1.1.1 commit-sha
-# 推送
-git push --tags
-```
-
 ## 说明
 
 - 技术栈：`vue3 & vite2 & ts; node version >= 12`,请使用 `nvm + avn 管理node版本`
@@ -64,16 +52,6 @@ git push --tags
 ```
 
 ## 开发说明
-
-> 目前标品开发从 `dev` 分支中切出新分支，以 `feature-`开头；针对客户定制开发，例如`BOSCH`则从`BOSCH`切出新分支，以`BOSCH-feature-`开头，合并时分别对应向`dev` or
-> `BOSCH` 提出`merge request`即可
-
-- 配置环境变量： `.env.*`文件内
-- CSS: 使用`less`
-- 本项目使用 eslint:recommended 规范，如需修改请参照 tslint 官方提示
-- 下载额外的`npm`包需要添加其他类型定义：1.安装`npm i --save-dev @types/xxx`；2.在`tsconfig.json`中添加``types`的配置『 **_由于 vite2 创建的 ts 项目中已添加默认
-  的 types 定义，标明只使用该类型定义，所以如果需要其他类型（不在@vite/client 中），需要增加配置_** 』
-
 ```json
 // tsconfig.json
 // 在 node 后面增加一项xxx即可
