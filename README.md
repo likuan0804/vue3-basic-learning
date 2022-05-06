@@ -1,5 +1,3 @@
-# 智慧导购标品-后台项目
-
 ## 启动
 
 > 现发现 windows 下 build 会有问题，windows 系统的同学可将 build 打包命令由`vuedx-typecheck . && vite build` 改为 `vite build && tsc`,ci 脚本内加一条
