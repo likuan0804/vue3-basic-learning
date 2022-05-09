@@ -6,7 +6,12 @@ const About = () => import("../components/about.vue");
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    component: HelloWorld, // 非懒加载
+    redirect: '/home',
+  },
+  {
+    path:'/home',
+    component: () => import('@/views/home.vue'),
+    
   },
   {
     path: "/about",
