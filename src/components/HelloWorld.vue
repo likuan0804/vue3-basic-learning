@@ -25,6 +25,15 @@
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+  <!--     teleport的使用    -->
+  
+  <button @click="showToast" class="btn">打开 toast</button>
+  <!-- to 属性就是目标位置 -->
+  <teleport to="#teleport-target">
+    <div v-if="visible" class="toast-wrap">
+      <div class="toast-msg">我是一个 Toast 文案</div>
+    </div>
+  </teleport>
 </template>
 
 

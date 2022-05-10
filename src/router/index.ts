@@ -1,30 +1,33 @@
-import HelloWorld from "@/components/hello-world.vue";
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-
-// 路由懒加载
-const About = () => import("../components/about.vue");
-const routes: RouteRecordRaw[] = [
+/**
+ * createRouter 这个为创建路由的方法
+ * createWebHashHistory 这个就是vue2中路由的模式，
+ *                      这里的是hash模式，这个还可以是createWebHistory等
+ * RouteRecordRaw 这个为要添加的路由记录，也可以说是routes的ts类型
+ */
+import {createRouter, createWebHashHistory, RouteRecordRaw} from 'vue-router';
+// 路由记录，这个跟vue2中用法一致
+const routes:Array<RouteRecordRaw> = [
   {
-    path: "/",
-    redirect: '/home',
-  },
-  {
-    path:'/home',
-    component: () => import('@/views/home.vue'),
-    
-  },
-  {
-    path: "/about",
-    component: About,
-    // meta类型需要额外声明，此声明在 src/typings/augmenation.d.ts内
+    path: '/',
+    name: 'todolist',
+    component: () => import("@/components/TodoList.vue"),
+    alias: '/todolist',
     meta: {
-      isAdmin: false,
-      title: "关于",
-    },
+      title: 'todolist页面'
+    }
+  },
+  {
+    path: '/father',
+    name: 'father',
+    component: () => import("@/components/Father.vue"),
+    meta: {
+      title: 'father页面'
+    }
   },
 ];
+
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 });
 export default router;

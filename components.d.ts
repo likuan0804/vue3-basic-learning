@@ -6,10 +6,15 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     About: typeof import('./src/components/about.vue')['default']
+    ASlider: typeof import('ant-design-vue/es')['Slider']
+    Father: typeof import('./src/components/Father.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Menu: typeof import('./src/components/menu.vue')['default']
+    Modal: typeof import('./src/components/Modal.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Son: typeof import('./src/components/Son.vue')['default']
+    Teleport: typeof import('./src/components/Teleport.vue')['default']
     TodoList: typeof import('./src/components/TodoList.vue')['default']
   }
 }

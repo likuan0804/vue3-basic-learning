@@ -1,5 +1,9 @@
 <template>
+    <div>
+      <a-button @click="jumpFather" >跳转到father</a-button>
+    </div>
   <div class="todo-list-container" >
+
     <div class="todo-wrapper" >
       <input 
         class="todo-input" 
@@ -32,7 +36,20 @@ import {Input} from 'ant-design-vue';
 // 图标组件 
 import { DeleteOutlined, CheckOutlined, CheckCircleFilled, ToTopOutlined } from "@ant-design/icons-vue";
 import { ref } from 'vue'
+import {Button as AButton} from 'ant-design-vue';
+// useRouter的使用
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
+const jumpFather = () => {
+  // 编程式跳转和传参
+  router.push({
+    path: '/father',
+    query: {
+      msg: '这是路由传入的参数'
+    }
+  })
+};
 // 声明存储数据数组
 // let todoList = ref<{
 //   title: string,
