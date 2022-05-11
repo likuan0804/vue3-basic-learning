@@ -39,6 +39,7 @@ import { ref } from 'vue'
 import {Button as AButton} from 'ant-design-vue';
 // useRouter的使用
 import { useRouter } from 'vue-router';
+import addTodo from '@/compose/addTodoList'
 const router = useRouter();
 
 const jumpFather = () => {
@@ -90,26 +91,12 @@ const todoText = ref('');
 // 这里ref看似没有使用泛型，实际上是省略了，上边的等于
 // const todoText = ref<string>('');
 
-// 然后是增加list
-const addTodoList = () => {
-  // 如果input内容为空则不继续执行
-  if(!todoText.value) return;
-  // 将input的内容添加到todoList
-  todoList.value.unshift({
-    title: todoText.value,
-    is_completed: false,
-    is_top: false
-  });
-  // 添加完成后，清空todoText的值
-  todoText.value = '';
-  // 插入后排序
-  todoList.value = todoListSort(todoList.value);
-}
 
 // 删除List
 const deleteTodoList = (index:number) => {
   todoList.value.splice(index, 1);
 }
+const { addTodoListRealy } = addTodo()
 
 // 完成List
 const completedTodoList = (index:number) => {
@@ -123,6 +110,12 @@ const topTodoList = (index:number) => {
   todoList.value[index].is_top = true;
   // 置顶后排序，将完成的放前边
   todoList.value = todoListSort(todoList.value);
+}
+const addTodoList = ()=> {
+  addTodoListRealy(todoList.value, todoText.value)
+  todoText.value = ''
+  console.log(todoList.value, todoText.value)
+  
 }
 
 

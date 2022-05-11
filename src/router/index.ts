@@ -10,7 +10,7 @@ const routes:Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'todolist',
-    component: () => import("@/components/TodoList.vue"),
+    component: () => import("@/views/TodoList.vue"),
     alias: '/todolist',
     meta: {
       title: 'todolist页面'
@@ -19,7 +19,15 @@ const routes:Array<RouteRecordRaw> = [
   {
     path: '/father',
     name: 'father',
-    component: () => import("@/components/Father.vue"),
+    component: () => import("@/views/Father.vue"),
+    meta: {
+      title: 'father页面'
+    }
+  },
+  {
+    path: '/myFun',
+    name: 'myFun',
+    component: () => import("@/views/myFun.vue"),
     meta: {
       title: 'father页面'
     }

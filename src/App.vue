@@ -6,6 +6,8 @@
     <router-link to="/" >todolist</router-link>
     |
     <router-link to="/father" >father</router-link>
+    ||
+    <router-link to="/myFun" >手写实现</router-link>
   </div>
   <router-view></router-view>
 </template>
