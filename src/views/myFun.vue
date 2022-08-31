@@ -62,7 +62,7 @@ import {shallowReactive, reactive} from 'vue'
     })
   }
   const myRef = (obj) => {
-    retrun myReactive({value: obj})
+    return myReactive({value: obj})
   }
   let obj = {
     a: 'a',
